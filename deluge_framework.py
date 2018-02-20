@@ -51,8 +51,34 @@ def on_torrents_status(torrents):
                 successmsg = "%s [%s]: Deleted WITH DATA" % (torrent_id, torrent_info['name'])
                 errormsg = "%s [%s]: Error deleting WITH DATA" % (torrent_id, torrent_info["name"])
                 tlist.append(client.core.remove_torrent(torrent_id, True).addCallbacks(printSuccess, printError, callbackArgs = (True, successmsg), errbackArgs = (errormsg)))
-            elif res == 'l':
-                printSuccess(None, False, "%s [%s]: Listing (doing nothing)" % (torrent_id, torrent_info["name"]))
+            elif res == 'tv':
+                successmsg = "%s [%s]: Labeled WITH tv" % (torrent_id, torrent_info['name'])
+                errormsg = "%s [%s]: Error deleting WITH tv" % (torrent_id, torrent_info["name"])
+                tlist.append(client.label.set_torrent(torrent_id, res).addCallbacks(printSuccess, printError, callbackArgs = (True, successmsg), errbackArgs = (errormsg)))
+            elif res == 'anime':
+                successmsg = "%s [%s]: Labeled WITH anime" % (torrent_id, torrent_info['name'])
+                errormsg = "%s [%s]: Error deleting WITH anime" % (torrent_id, torrent_info["name"])
+                tlist.append(client.label.set_torrent(torrent_id, res).addCallbacks(printSuccess, printError, callbackArgs = (True, successmsg), errbackArgs = (errormsg)))
+            elif res == 'music':
+                successmsg = "%s [%s]: Labeled WITH music" % (torrent_id, torrent_info['name'])
+                errormsg = "%s [%s]: Error deleting WITH music" % (torrent_id, torrent_info["name"])
+                tlist.append(client.label.set_torrent(torrent_id, res).addCallbacks(printSuccess, printError, callbackArgs = (True, successmsg), errbackArgs = (errormsg)))
+            elif res == 'movies':
+                successmsg = "%s [%s]: Labeled WITH movies" % (torrent_id, torrent_info['name'])
+                errormsg = "%s [%s]: Error deleting WITH movies" % (torrent_id, torrent_info["name"])
+                tlist.append(client.label.set_torrent(torrent_id, res).addCallbacks(printSuccess, printError, callbackArgs = (True, successmsg), errbackArgs = (errormsg)))
+            elif res == 'books':
+                successmsg = "%s [%s]: Labeled WITH books" % (torrent_id, torrent_info['name'])
+                errormsg = "%s [%s]: Error deleting WITH books" % (torrent_id, torrent_info["name"])
+                tlist.append(client.label.set_torrent(torrent_id, res).addCallbacks(printSuccess, printError, callbackArgs = (True, successmsg), errbackArgs = (errormsg)))
+            elif res == 'comics':
+                successmsg = "%s [%s]: Labeled WITH comics" % (torrent_id, torrent_info['name'])
+                errormsg = "%s [%s]: Error deleting WITH comics" % (torrent_id, torrent_info["name"])
+                tlist.append(client.label.set_torrent(torrent_id, res).addCallbacks(printSuccess, printError, callbackArgs = (True, successmsg), errbackArgs = (errormsg)))
+            elif res == 'pron':
+                successmsg = "%s [%s]: Labeled WITH pron" % (torrent_id, torrent_info['name'])
+                errormsg = "%s [%s]: Error deleting WITH pron" % (torrent_id, torrent_info["name"])
+                tlist.append(client.label.set_torrent(torrent_id, res).addCallbacks(printSuccess, printError, callbackArgs = (True, successmsg), errbackArgs = (errormsg)))
             elif res == '':
                 pass
             else:
